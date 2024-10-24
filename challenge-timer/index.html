@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <main>
+    <h1>Countdown Timer</h1>
+
+    <!-- 時間表示 -->
+    <div class="times">
+      <p id="hour">00</p>
+      <p class="sepa">:</p>
+      <p id="min">00</p>
+      <p class="sepa">:</p>
+      <p id="sec">00</p>
+    </div>
+
+    <!-- 時間入力 -->
+    <div class="forms">
+      <form action="#" id="form">
+        <input type="number" name="setHour" placeholder="h">
+        <input type="number" name="setMin" placeholder="m">
+        <input type="number" name="setSec" placeholder="s">
+      </form>
+    </div>
+
+    <!-- ボタン -->
+    <div class="buttons">
+      <button id="start">Start</button>
+      <button id="stop">Stop</button>
+      <button id="reset">Reset</button>
+    </div>
+
+  </main>
+
+  <script src="js/main.js">
+  </script>
+</body>
+
+</html>

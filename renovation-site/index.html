@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap"
+    rel="stylesheet">
+  <title>design house renovaions</title>
+</head>
+
+<body>
+  <header>
+    <h1 class="logo">
+      <img src="images/header_title.svg" alt="design house renovaions">
+    </h1>
+
+    <!-- ハンバーガーメニュー-->
+
+    <nav class="grobalNav">
+      <!-- メニュー開閉用チェックボックス -->
+      <input type="checkbox" id="menu-btn" class="menu-btn">
+      <!--ハンバーガーアイコン-->
+      <!--メニュー開閉用チェックボックスは非表示にする（ハンバーガーアイコンをクリックしたら開閉するようにする）ため、ハンバーガーアイコンを、メニュー開閉チェックボックスに関連付ける  -->
+      <label class="menu-icon" for="menu-btn">
+        <!-- メニュー開閉の線 -->
+        <span class="navicon"></span>
+      </label>
+
+      <!--メニューページ一覧-->
+      <ul class="menu">
+        <li><a href="#conceptArea">コンセプト</a></li>
+        <li><a href="#serviceArea">サービス</a></li>
+        <li><a href="#flowArea">施工の流れ</a></li>
+        <li><a href="#qaArea">よくあるご質問</a></li>
+        <li><a href="#contactArea">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <img src="images/hero_pc.jpg" class="imageHero" alt="hero_pc">
+    <img src="images/hero_sp.jpg" class="imageHeroSp" alt="hero_sp">
+  </div>
+
+  <main>
+    <section class="concept" id="conceptArea">
+      <h2>concept</h2>
+      <div class="subTitle">
+        <p class="lineRight"></p>
+        <p class="jaTitle">コンセプト</p>
+        <p class="lineLeft"></p>
+      </div>
+      <p class="famCatch">家族が笑顔になれる場所</p>
+      <p class="lead">家族が集う、温かく居心地の良い空間づくりを目指して、幅広い年代の方に安心して過ごしていただける空間づくりや、お手入れのしやすい素材を使用したリフォームをご提案いたします。</p>
+    </section>
+
+    <section class="service" id="serviceArea">
+      <h2>
+        service
+      </h2>
+      <div class="subTitle">
+        <p class="lineRight"></p>
+        <p class="jaTitle">サービス</p>
+        <p class="lineLeft"></p>
+      </div>
+
+      <div class="serviceList">
+        <div>
+          <p>
+            <img src="images/list-1-img.png" alt="bath">
+          </p>
+          <h3>浴室</h3>
+          <p class="sentence">ご家族が一緒に入れる広めの浴槽や手すり等、安全性に配慮しています。</p>
+          <p class="morebtnParents"><a href="#" class="moreBtn">more</a>
+          </p>
+        </div>
+
+        <div>
+          <p>
+            <img src="images/list-2-img.png" alt="living">
+          </p>
+          <h3 class="jaTitle">リビング</h3>
+          <p class="sentence">照明や家具の配置等、くつろぎやすい空間づくりを大切にしています。</p>
+          <p class="morebtnParents"><a href="#" class="moreBtn">more</a></p>
+        </div>
+
+        <div>
+          <p>
+            <img src="images/list-3-img.png" alt="kitchen">
+          </p>
+          <h3>キッチン</h3>
+          <p class="sentence">機能性だけでなく、デザイン性にもこだわっております。</p>
+          <p class="morebtnParents"><a href="#" class="moreBtn">more</a>
+          </p>
+        </div>
+        <!-- 下記サービスリストdiv終了タグ -->
+      </div>
+
+    </section>
+
+    <section class="flow" id="flowArea">
+      <h2>flow</h2>
+      <div class="subTitle">
+        <p class="lineRight"></p>
+        <p class="jaTitle">施工の流れ</p>
+        <p class="lineLeft"></p>
+      </div>
+
+      <ol>
+        <li class="flowList">ご相談</li>
+        <li class="one"></li>
+        <li class="flowList">現地調査</li>
+        <li class="two"></li>
+        <li class="flowList">お見積り</li>
+        <li class="three"></li>
+        <li class="flowList">ご契約</li>
+        <li class="four"></li>
+        <li class="flowList">施工</li>
+        <li class="five"></li>
+        <li class="flowList">お引渡し</li>
+      </ol>
+    </section>
+
+
+    <section class="qa" id="qaArea">
+      <h2>q&amp;a</h2>
+      <div class="subTitle">
+        <p class="lineRight"></p>
+        <p class="jaTitle">よくあるご質問</p>
+        <p class="lineLeft"></p>
+
+      </div>
+      <div class="numberList1q">
+        <p class="que"><span>q.</span></p>
+        <p class="sentence">見積りは無料ですか？</p>
+      </div>
+
+      <div class="numberList1a">
+        <p class="ans"><span>a.</span></p>
+        <p class="sentence">はい。お見積りは無料で承っております。ホームページよりお気軽にお問い合わせください。</p>
+      </div>
+
+      <div class="numberList2q">
+        <p class="que"><span>q.</span></p>
+        <p class="sentence">普段通り生活をしながらのリフォーム工事は可能ですか？</p>
+      </div>
+
+      <div class="numberList2a">
+        <p class="ans"><span>a.</span></p>
+        <p class="sentence">はい。もちろん可能です。工事中の箇所は、何日間か使用できなくなる場合もございますのであらかじめご了承ください。大型リフォームの場合には、仮住まいもお薦めしております。</p>
+      </div>
+    </section>
+
+    <section class="contact" id="contactArea">
+      <h2>contact</h2>
+      <div class="subTitle">
+        <p class="lineRight"></p>
+        <p class="jaTitle">お問い合わせ</p>
+        <p class="lineLeft"></p>
+      </div>
+
+
+      <form action="#" method="post">
+
+        <table>
+          <tr>
+            <th>
+              <p class="labelTitle">お問い合わせ種別</p>
+            </th>
+            <td>
+              <div class="typeSelect">
+
+                <label for="siryo" class="sampleLabel" id="labelSiryo">
+                  <input type="radio" name="questionKnd" value="資料請求" id="siryo" checked>資料請求
+                </label>
+
+                <label for="soudan" class="sampleLabel" id="labelSoudan">
+                  <input type="radio" name="questionKnd" value="ご相談" id="soudan">ご相談
+                </label>
+
+              </div>
+            </td>
+          </tr>
+
+
+          <tr>
+            <th>
+              <p class="labelTitle">お名前</p>
+            </th>
+            <td><input type="text" name="userName" required></td>
+          </tr>
+
+          <tr>
+            <th>
+              <p class="labelTitle">フリガナ</p>
+            </th>
+            <td><input type="text" name="userName" required></td>
+          </tr>
+
+          <tr>
+            <th>
+              <p class="labelTitle">電話番号</p>
+            </th>
+            <td><input type="tel" name="phoneNumber" required></td>
+          </tr>
+
+          <tr>
+            <th>
+              <p class="labelTitle">住所</p>
+            </th>
+            <td>
+              <div class="adressNumber"><input type="text" name="adressNumber" required></div>
+              <input type="text" name="userAdress" required>
+            </td>
+          </tr>
+
+          <tr>
+            <th>
+              <p class="labelTitle">メールアドレス</p>
+            </th>
+            <td><input type="email" name="userEmail" required></td>
+          </tr>
+
+          <tr>
+            <th>
+              <p class="labelTitle">メールアドレス&lpar;確認用&rpar;</p>
+            </th>
+            <td><input type="email" name="userEmail" required></td>
+          </tr>
+
+          <tr>
+            <th>
+              <p class="labelTitlenNonneed">お問い合わせ内容</p>
+            </th>
+            <td><textarea name="content"></textarea></td>
+          </tr>
+        </table>
+
+
+        <p class="submitBtn"><input type="submit" name="sendBtn" value="入力内容を確認する">
+        </p>
+      </form>
+
+    </section>
+  </main>
+
+
+
+  <footer>
+    <div>
+      <p>
+        <a href="#" class="topPage"></a>
+      </p>
+    </div>
+
+    <p class="footerArea">
+      <small class="copyRight">
+        &copy;
+      </small>
+      <small class="companyName">
+        Design House Renovations</small>
+    </p>
+
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,1122 @@
+@charset "UTF-8";
+
+/* 全体のスタイル */
+body {
+  font-family: "Noto Serif JP", serif;
+  line-height: 1;
+  font-size: 16px;
+  color: #333;
+  letter-spacing: 0.1em;
+  background-color: #fff;
+  box-sizing: border-box
+}
+
+/* p要素用スタイル */
+body p {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0.1em;
+}
+
+/* design house renovationとハンバーガーのコンテンツ */
+/* いらない気がしてきた */
+header {
+  width: 100%;
+}
+
+/* design house renovationのロゴ */
+.logo {
+  width: 64%;
+  margin-top: 16px;
+  margin-left: 12px;
+}
+
+/* ハンバーガーメニュー */
+/* チェックボックスがオフの時の設定 */
+/* nav要素は画面上部に固定表示 */
+.grobalNav {
+  /* 右上に固定、前面に表示 */
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99;
+  width: 100%;
+}
+
+/* チェックボックスを非表示 */
+.menu-btn {
+  display: none;
+}
+
+/* ハンバーガーアイコン作成 */
+.menu-icon {
+  /* 右上に絶対配置 */
+  position: absolute;
+  right: 12px;
+  top: 16px;
+  height: 20px;
+  padding-top: 5px;
+}
+
+/* 中央の線作成 */
+.navicon {
+  /* ブロックレベルへ変更 */
+  display: block;
+  /* 線の長さ */
+  width: 31px;
+  /* 線の太さ */
+  height: 2px;
+  /* 線の色 */
+  background: #B71B26;
+  /* ::before と ::after の基準要素として設定 */
+  position: relative;
+}
+
+/* 上と下の線作成 上下共通 */
+.navicon::before,
+.navicon::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #B71B26;
+  /* 基準要素 の中央線に対して絶対配置 */
+  position: absolute;
+  /* 三本線と X の切替えアニメーション 速く始まりゆっくり終わる */
+  transition: all .4s ease-out;
+}
+
+/* 下の線 */
+.navicon::before {
+  /* 上からの位置 */
+  top: 10px;
+}
+
+/* 上の線 */
+.navicon::after {
+  /* 上へ 10px の位置 */
+  top: -10px;
+}
+
+/* メニューの設定 */
+.menu {
+  background-color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  /* チェックボックスがオフの時は非表示 */
+  overflow: hidden;
+  /* 最大の高さ */
+  max-height: 0;
+  /* 非表示の際のアニメーション */
+  transition: max-height 0.6s;
+}
+
+/* 1 つ目の li 要素 */
+.menu li:first-of-type {
+  /* 挿入した画像のmargin-top16px＋デザインカンプで確認したヘッダーとコンセプトのpadding29px足したもの */
+  padding-top: 45px;
+}
+
+/* a 要素 */
+.menu a {
+  display: block;
+  padding: 24px 20px;
+  text-decoration: none;
+}
+
+/* ホバー時の色指定ないがプレゼン発表時のため簡易的に色付ける */
+.menu a:hover {
+  background-color: #f4f4f4;
+}
+
+/* チェックボックスがオンの時の設定 */
+/* メニューを表示 */
+.menu-btn:checked~.menu {
+  max-height: 100vh;
+  /* 元 0px */
+  /* メニューを表示した際のアニメーション */
+  transition: all 0.9s;
+}
+
+/* ハンバーガーアイコンを三本線からバツへ表示変更する設定 */
+/* メニューボタンがチェックの時、メニューアイコンのナビコンは・・・ */
+/* 中央の線を非表示 */
+.menu-btn:checked~.menu-icon .navicon {
+  background: transparent;
+}
+
+/* 上下の線を 45 度傾けて バツアイコンを作成 */
+.menu-btn:checked~.menu-icon .navicon::before {
+  /* 下の線を反時計回りに回転 */
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.menu-btn:checked~.menu-icon .navicon::after {
+  /* 上の線を時計回りに回転 */
+  transform: rotate(45deg);
+  top: 0;
+}
+
+/* ハンバーガーアイコンここまで */
+
+/* 椅子の写真*/
+.imageHero {
+  display: none;
+}
+
+.imageHeroSp {
+  width: 100%;
+}
+
+/* 各セクションの余白 */
+section {
+  margin-top: 80px;
+}
+
+/* 両端余白あるセクション */
+.concept,
+.service,
+.qa {
+  padding: 0 12px;
+}
+
+/* 各セクションのタイトル共共通スタイル */
+h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.1em;
+}
+
+/* 下のサブタイトル */
+.subTitle {
+  color: #223E69;
+  margin-top: 8px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+/* 下のサブタイトル文字部分 */
+.jaTitle {
+  font-family: "Noto Serif JP", serif;
+  font-size: 12px;
+}
+
+/* 下のサブタイトル両端線 */
+.lineRight,
+.lineLeft {
+  bottom: 5px;
+  width: 60.5px;
+  border-bottom: 1px solid #223E69;
+
+}
+
+/* 下のサブタイトル右線 */
+.lineRight {
+  margin-right: 8px;
+  position: relative;
+}
+
+/* 下のサブタイトル左線 */
+.lineLeft {
+  margin-left: 8px;
+  position: relative;
+}
+
+/* コンセプトのキャッチコピー部分 */
+.famCatch {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+/* コンセプト用の余白 */
+.concept {
+  margin-top: 48px;
+}
+
+/* コンセプト文章 */
+.concept .lead {
+  font-size: 14px;
+  line-height: 2;
+}
+
+/* サービス各画像設定 */
+.service p img {
+  display: block;
+  margin: auto;
+}
+
+/* サービス内各場所のタイトル共通スタイル */
+.service h3 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* サービス内本文 */
+.service .sentence {
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
+/* moreの配置 */
+.morebtnParents {
+  position: relative;
+  margin-right: 14px;
+}
+
+/* moreリンクのスタイル設定 */
+.moreBtn {
+  display: block;
+  text-align: end;
+  font-size: 14px;
+  margin-bottom: 48px;
+}
+
+/* moreリンクの矢印疑似要素 */
+.moreBtn::after {
+  content: "";
+  position: absolute;
+  height: 0px;
+  width: 0px;
+  top: 5px;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-left: 5px solid #333;
+  margin-left: 4px;
+}
+
+/* フロースタイル */
+.flow {
+  background: rgba(34, 62, 105, 0.05);
+  padding-bottom: 16px;
+}
+
+/* フロータイトルの余白 */
+/* タイトルの上部に色付け余白があるため */
+.flow h2 {
+  padding-top: 16px;
+}
+
+/* フローのサブタイトルスタイル */
+.flow .subTitle {
+  color: #B71B26;
+  margin-bottom: 24px;
+}
+
+/* フローのサブタイトル左右線スタイル */
+.flow .subTitle .lineRight,
+.flow .subTitle .lineLeft {
+  border-bottom-color: #B71B26;
+}
+
+/* フローリスト共通スタイル */
+.flow .flowList {
+  width: 85%;
+  margin: 8px auto;
+  text-align: center;
+  color: #fff;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  background-color: #333;
+  border-radius: 20px;
+  padding: 8px 0;
+}
+
+/* 矢印共通スタイル */
+.flow ol .one,
+.flow ol .two,
+.flow ol .three,
+.flow ol .four,
+.flow ol .five {
+  content: "";
+  position: relative;
+  display: block;
+  height: 0;
+  width: 0;
+  margin: auto;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  align-items: center;
+}
+
+/* 矢印の段階的な色変化 */
+.flow ol .one {
+  border-top: 20px solid rgba(183, 27, 38, 0.6);
+}
+
+.flow ol .two {
+  border-top: 20px solid rgba(183, 27, 38, 0.7);
+}
+
+.flow ol .three {
+  border-top: 20px solid rgba(183, 27, 38, 0.8);
+}
+
+.flow ol .four {
+  border-top: 20px solid rgba(183, 27, 38, 0.9);
+}
+
+.flow ol .five {
+  border-top: 20px solid rgba(183, 27, 38, 1);
+}
+
+
+/* Q&A */
+/* 記号とセンテンス横並び用 */
+.numberList1q,
+.numberList1a,
+.numberList2q,
+.numberList2a {
+  display: flex;
+}
+
+/* Questionの余白 */
+.numberList1q,
+.numberList2q {
+  margin-bottom: 16px;
+  /* 揃わないから後で確認 */
+}
+
+/* 一個目のAnswerと二個目のQuestionとの間の余白 */
+.numberList1a {
+  margin-bottom: 24px;
+}
+
+/* QAのまる */
+.que,
+.ans {
+  flex-shrink: 0;
+  font-family: "Noto Serif JP", serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  width: 36px;
+  height: 36px;
+  margin-right: 8px;
+  border-radius: 50%;
+  color: #fff;
+  text-align: right;
+  vertical-align: top;
+}
+
+/* Qの色 */
+.que {
+  background-color: #333;
+}
+
+/* Aの色 */
+.ans {
+  background-color: #B71B26;
+}
+
+/* 丸内のテキストの位置を修正 */
+span {
+  vertical-align: text-bottom;
+}
+
+.sentence {
+  vertical-align: middle;
+}
+
+/* お問い合わせ */
+.contact {
+  background-color: rgba(34, 62, 105, 0.15);
+}
+
+/* お問い合わせのタイトル 余白*/
+/* 背景色出すため */
+.contact h2 {
+  padding-top: 16px;
+}
+
+/* フォーム余白 */
+form {
+  padding: 0 12px 24px;
+  max-width: 1020px;
+  margin: auto;
+}
+
+/* フォーム色付け幅１００％ */
+table {
+  width: 100%;
+}
+
+/* 疑似要素で必須追加 */
+.labelTitle:after {
+  margin-left: 4px;
+  content: "必須";
+  font-size: 10px;
+  color: #fff;
+  background-color: #B71B26;
+  padding: 4px 9.5px;
+  border-radius: 8px;
+}
+
+
+/* 入力項目名と入力フォーム横並び */
+th,
+td {
+  display: block;
+}
+
+/* 入力項目名と種別の選択名のスタイル */
+th,
+.typeSelect {
+  text-align: center;
+  font-size: 14px;
+  font-family: "Noto Sans JP", sans-serif;
+
+}
+
+/* 種別選択の余白 */
+.typeSelect {
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+/* ラジオボタンスタイル */
+input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+input[type="radio"]:checked {
+  background-color: rgba(35, 62, 105, 1);
+}
+
+/* 入力フォームのスタイル */
+input[name=userName],
+input[type=tel],
+input[type=email],
+input[name=userAdress],
+textarea {
+  width: 100%;
+  height: 32px;
+  background-color: #fff;
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+/* 郵便番号のスタイル */
+input[name=adressNumber] {
+  height: 32px;
+  width: 125px;
+  margin-top: 8px;
+  background-color: #fff;
+}
+
+/* 郵便番号のマーク入れ */
+.adressNumber::before {
+  /* contentには１６進数をいれる */
+  content: "\03012";
+  font-size: 14px;
+  margin-right: 4px;
+  vertical-align: baseline;
+}
+
+/* お問い合わせ内容の高さ指定 */
+textarea {
+  height: 120px;
+}
+
+/* 送信ボタン中央寄せ */
+.submitBtn {
+  text-align: center;
+}
+
+/* 送信ボタン内矢印 */
+.submitBtn::after {
+  content: "";
+  position: relative;
+  right: 30px;
+  top: 5px;
+  display: inline-block;
+  height: 0px;
+  width: 0px;
+  border-left: 8px solid #fff;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+
+/* 送信ボタン内の文字スタイル */
+input[type="submit"] {
+  font-family: "Noto Serif JP", serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  padding: 16px 26.5px 16px 16.5px;
+  width: 200px;
+  background-color: #333333;
+}
+
+/* フッタースタイル */
+footer {
+  margin-top: 80px;
+  color: #fff;
+}
+
+/* フッタートップページ箱の背景 */
+footer div {
+  padding: 0 12px;
+}
+
+/* トップページ箱スタイル */
+.topPage {
+  display: block;
+  position: relative;
+  width: 46px;
+  height: 46px;
+  background-color: #333333;
+  margin: 0 0 0 auto;
+}
+
+/* トップページ矢印 */
+.topPage::after {
+  content: "";
+  position: absolute;
+  right: 13px;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  border-left: 4px solid #fff;
+  border-top: 4px solid #fff;
+  transform: rotate(45deg);
+
+
+}
+
+/* 黒いところ */
+.footerArea {
+  display: flex;
+  justify-content: center;
+  background-color: #333333;
+  padding: 16px;
+}
+
+/* コピーライト */
+.copyRight,
+.companyName {
+  font-family: "Noto Serif JP", serif;
+  font-weight: 500;
+}
+
+/* Cマルスタイル */
+.copyRight {
+  font-size: 10px;
+  margin-right: 1px;
+}
+
+/* 企業名スタイル */
+.companyName {
+  font-size: 12px;
+}
+
+
+/* ★★★PC版表示★★★ */
+
+@media screen and (min-width:768px) {
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* ロゴ余白 */
+  .logo {
+    margin: 24px 0 0 24px;
+  }
+
+  /* ロゴ */
+  .logo img {
+    /* ロゴが使用できる619pxのうちロゴが占めるピクセル数は400pxなので割合で表すと６４％ */
+    width: 64%;
+  }
+
+  /* ロゴとナビゲーションを横並びにする */
+  header {
+    display: flex;
+  }
+
+  /* ハンバーガーメニューの設定初期値へ変更 */
+  .grobalNav {
+    /* ヘッダー領域の半分 */
+    flex-basis: 50%;
+    position: static;
+    z-index: auto;
+  }
+
+  /* ハンバーガーアイコンとチェックリストを無効化 */
+  .grobalNav input,
+  .grobalNav label {
+    display: none;
+  }
+
+  /* メニューを常に表示 */
+  /* リストを横並び */
+  /* 上部余白 */
+  .menu {
+    overflow: visible;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+    margin-right: 24px;
+  }
+
+  /* 余白削除 */
+  .menu li:first-of-type {
+    padding: 0px;
+  }
+
+  /* 上余白もなくす */
+  .menu li a {
+    padding: 0px;
+    /* 三角用基準 */
+    position: relative;
+    /* 縮めても折り返さない */
+    margin-left: 40px;
+    font-size: clamp(0.625rem, -0.149rem + 1.61vw, 1rem);
+    white-space: nowrap;
+  }
+
+  /* ホバー時アニメーションここから */
+  /* ホバー時用矢印の設定 */
+  .menu li a::after {
+    content: "";
+    position: absolute;
+    /*各メニューの下に表示させる */
+    display: block;
+    /* 右は位置から見て50％の位置とborderの太さ8px引いてメニューの真ん中に表示させる */
+    margin-top: 2px;
+    right: calc(50% - 8px);
+    border-bottom: 8px solid #B71B26;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    /* 通常は透明にする */
+    opacity: 0;
+  }
+
+  /* ホバー時文字色を変更する */
+  /* スマホでつけたホバー消しておく */
+  .menu li a:hover {
+    color: #B71B26;
+    font-weight: bold;
+    background-color: transparent;
+  }
+
+  /* ホバーしたら透明解除して矢印回転させる */
+  .menu li a:hover::after {
+    opacity: 1;
+    transform: rotateY(135deg);
+    transition-property: all;
+    transition-duration: 600ms;
+  }
+
+
+  /* アニメーションここまで */
+
+
+  /* 各セクションの余白 */
+  section {
+    margin-top: 160px;
+  }
+
+  /*メイン写真 */
+  .hero {
+    margin-top: 24px;
+  }
+
+  .imageHeroSp {
+    display: none;
+  }
+
+  .imageHero {
+    display: inline;
+    width: 100vw;
+    height: 545px;
+    object-fit: cover;
+  }
+
+  /* セクション等共通左右余白 */
+  .concept,
+  .service,
+  .qa {
+    width: 1020px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 各タイトル */
+  h2 {
+    font-size: 42px;
+  }
+
+  /* 下のサブタイトル */
+  .subTitle {
+    margin-top: 16px;
+    margin-bottom: 48px;
+  }
+
+  /* 下のサブタイトル文字部分 */
+  .jaTitle {
+    font-size: 16px;
+  }
+
+  /* コンセプト余白 */
+  .concept {
+    margin-top: 160px;
+  }
+
+  /* キャッチコピーサイズ */
+  .famCatch {
+    font-size: 28px;
+  }
+
+  /* 文字サイズ */
+  .concept .lead {
+    font-size: 16px;
+  }
+
+  /* サービス内リスト横並び */
+  .serviceList {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    /* 親要素の高さに合わせて子要素の高さ伸縮 */
+    align-items: stretch;
+  }
+
+
+  .serviceList div {
+    /* 各サービスの主軸方向を上から下に */
+    flex-direction: column;
+  }
+
+  /* サービス内各リストサイズ */
+  .serviceList div {
+    flex-basis: 29%;
+  }
+
+  /* サービス内画像幅 */
+  .serviceList div img {
+    max-width: 100%;
+  }
+
+  /* サービス内場所名スタイル */
+  .serviceList h3 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-size: 24px;
+  }
+
+  /* サービス内文章 */
+  /* .serviceList .sentence,
+  .morebtnParents {
+    font-size: 16px;
+  } */
+
+  .moreBtn {
+    /* スマホ版につけた余白削除する */
+    margin-bottom: 0px;
+  }
+
+  /* moreボタンホバー */
+  .moreBtn:hover {
+    transform: translate(5px);
+    color: #B71B26;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in;
+  }
+
+  /* moreボタン矢印 */
+  .moreBtn:hover::after {
+    border-left-color: #B71B26;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in;
+  }
+
+  /* フロー余白 */
+  .flow {
+    margin-top: 160.51px;
+    padding-bottom: 0;
+  }
+
+  /* フロー、コンタクト余白 */
+  .flow h2,
+  .contact h2 {
+    padding-top: 48px;
+  }
+
+  /* フローサブタイトル余白 */
+  .flow .subTitle {
+    margin-bottom: 48px;
+  }
+
+  /* フロー横並び */
+  .flow ol {
+    display: flex;
+    justify-content: center;
+    width: 66%;
+    margin: 0 auto;
+  }
+
+  /* フロー各リストスタイル */
+  .flow .flowList {
+    height: 280px;
+    max-width: 60px;
+    border-radius: 60px;
+    font-size: 28px;
+    margin: 48px 0;
+    /* 縦書きプロパティ右から左 */
+    writing-mode: vertical-rl;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  /* フロー矢印スタイル */
+  .flow ol .one,
+  .flow ol .two,
+  .flow ol .three,
+  .flow ol .four,
+  .flow ol .five {
+    transform: rotate(-90deg);
+    border-left-width: 30px;
+    border-right-width: 30px;
+    border-top-width: 30px;
+  }
+
+  /* 幅指定してスタイル固定 */
+  .qa {
+    max-width: 1140px;
+    margin: 160px auto;
+  }
+
+  /* QAまる */
+  .que,
+  .ans {
+    font-size: 34px;
+    width: 52px;
+    height: 52px;
+  }
+
+  /* QA文章 */
+  .sentence {
+    font-size: 20px;
+  }
+
+  /* 一個目のAnswerと二個目のQuestionとの間の余白 */
+  .numberList1a {
+    margin-bottom: 48px;
+  }
+
+  /* コンタクトスタイル */
+  .contact {
+    background-color: rgba(34, 62, 105, 0.15);
+    padding-bottom: 48px;
+  }
+
+  /* フォームスタイル */
+  form {
+    max-width: 1140px;
+    margin: 48px auto 0px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding-top: 48px;
+    padding-bottom: 48px;
+    margin-top: 48px;
+  }
+
+  /* フォーム各入力横並び */
+  th,
+  td {
+    display: table-cell;
+    padding: 12px 12px 12px 0px;
+  }
+
+  /* 入力項目名スタイル */
+  th {
+    width: 332px;
+    text-align: end;
+  }
+
+  /* 入力項目名文字サイズ */
+  .labelTitle,
+  .typeSelect,
+  .labelTitlenNonneed {
+    font-size: 20px;
+  }
+
+  /* 必須 */
+  .labelTitle::after {
+    font-size: 16px;
+    padding: 3px 12px 5px 12px;
+    display: inline-block;
+  }
+
+  td {
+    /* 縮めたときに入力フォーム少しでも残るように入れとく */
+    width: 664px;
+  }
+
+
+  .sampleLabel {
+    position: relative;
+  }
+
+  .typeSelect {
+    /* ラベルの主軸方向揃え */
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* ラジオボタンの作成 */
+  /* .sampleLabel::before {
+    position: absolute;
+    content: "";
+    display: block;
+    text-align: left;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+  } */
+
+  /* ラジオボタンのチェック */
+  /* 配置がうまくいかない */
+  /* .sampleLabel::after {
+    position: absolute;
+    content: "";
+    display: block;
+    text-align: left;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(34, 62, 105, 0.5);
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    opacity: 1;
+  } */
+
+  /*  入力フォームスタイル*/
+  .typeSelect,
+  input[type=text],
+  input[type=tel],
+  input[type=email] {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 52px;
+  }
+
+  /* 入力フォーム余白 */
+  input[type=text],
+  input[type=tel],
+  input[type=email],
+  textarea {
+    padding: 5px;
+  }
+
+  /* お問い合わせ内容スタイル */
+  textarea {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 208px;
+  }
+
+  .typeSelect {
+    /* tdの24pxを52pxからひいた数下余白出す */
+    margin-bottom: 28px;
+    /* 行揃え初期値に戻す */
+    text-align: left;
+  }
+
+  /* 郵便番号余白 */
+  .adressNumber {
+    margin-bottom: 24px;
+  }
+
+  /* 名前電話番号幅 */
+  input[name=userName],
+  input[type=tel] {
+    width: 50%;
+  }
+
+  /* 郵便番号、お問い合わせ種別幅 */
+  input[name=adressNumber],
+  .typeSelect {
+    width: 33%;
+  }
+
+  /* textareaインラインブロックのためmargin相殺されないから４８ｐｘあくように36pxプラスしてあげる */
+  .submitBtn {
+    margin-top: 36px;
+  }
+
+  /* 送信ボタンのスタイル */
+  input[type="submit"] {
+    width: 300px;
+    height: 68px;
+    font-size: 20px;
+  }
+
+  /* 送信ボタン矢印のスタイル */
+  .submitBtn::after {
+    right: 60px;
+    border-left: 9px solid #fff;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+  }
+
+  /* 送信ボタンホバー */
+  input[type=button]:hover {
+    margin-left: 20px;
+    background-color: rgba(183, 27, 38, 0.5);
+    transition: all ease-out 300ms;
+  }
+
+  /* フッター */
+  footer {
+    margin-top: 160px;
+  }
+
+  /* トップページ箱 */
+  .topPage {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* トップページ内矢印 */
+  .topPage::after {
+    width: 30px;
+    height: 30px;
+    top: 25px;
+  }
+
+  /* トップページホバー */
+  .topPage:hover {
+    transform: translateY(-20px);
+    transition: all 300ms ease-out;
+  }
+
+  /* 黒いとこ */
+  .footerArea {
+    height: 62px;
+  }
+
+  .copyRight,
+  .companyName {
+    font-size: 14px;
+    display: inline-block;
+  }
+
+
+}
